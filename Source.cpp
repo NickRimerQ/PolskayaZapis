@@ -158,12 +158,84 @@ string polskayaZapis(string str)
 	return outputLine;
 }
 
+int result(string str)
+{
+	stack<int> otherStack;
+	
+	for (int i = 0; i < str.length(); i++)
+	{
+		switch (str[i])
+		{
+		case'+':
+		{
+			int second = otherStack.top();
+			otherStack.pop();
+			int first = otherStack.top();
+			otherStack.pop();
+
+			otherStack.push(first + second);
+			continue;
+		}
+		case'-':
+		{
+			int second = otherStack.top();
+			otherStack.pop();
+			int first = otherStack.top();
+			otherStack.pop();
+
+			otherStack.push(first - second);
+			continue;
+		}
+		case'*':
+		{
+			int second = otherStack.top();
+			otherStack.pop();
+			int first = otherStack.top();
+			otherStack.pop();
+
+			otherStack.push(first * second);
+			continue;
+		}
+		case'/':
+		{
+			int second = otherStack.top();
+			otherStack.pop();
+			int first = otherStack.top();
+			otherStack.pop();
+
+			otherStack.push(first / second);
+			continue;
+		}
+		}
+		otherStack.push(str[i] - '0');
+	}
+	cout << otherStack.top() << endl;
+	return otherStack.top();
+}
+
+
+int together(string str)
+{
+	if (check(str) == 0)
+	{
+		return result(polskayaZapis(str));
+	}
+	else 
+	{
+		cout << "Error" << endl;
+		return 0;
+	}
+}
+
+
 
 int main()
 {
 	string a = "(1+2+)*(2/0)";
-	check(a);
-	cout << a << endl;
-
+	together(a);
+	cout << "--------------------------------" << endl;
+	string b = "(5-7)*(4+4-9)*3";
+	together(b);
+	
 	return 0;
 }
