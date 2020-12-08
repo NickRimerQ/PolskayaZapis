@@ -103,11 +103,67 @@ int check(string &example)
 	return counter;
 }
 
+string polskayaZapis(string str)
+{
+	cout << "Initial example: " << str << endl;
+	string outputLine;
+	stack<char> StackAfterALL;
+	for (int i = 0; i < str.length(); i++)
+	{
+		switch (str[i])
+		{
+		case '+':
+		case '-':
+			if (StackAfterALL.empty() != 1) 
+			{
+				if (StackAfterALL.top() == '*' || StackAfterALL.top() == '/')
+				{
+					char temp = StackAfterALL.top();
+					StackAfterALL.pop();
+					StackAfterALL.push(str[i]);
+					StackAfterALL.push(temp);
+					continue;
+				}
+			}
+			StackAfterALL.push(str[i]);
+			continue;
+		
+		case '*':
+		case '/':
+			StackAfterALL.push(str[i]);
+			continue;
+
+		case '(':
+			StackAfterALL.push(str[i]);
+			continue;
+
+		case ')':
+			while(StackAfterALL.top() != '(')
+			{
+				outputLine.push_back(StackAfterALL.top());
+				StackAfterALL.pop();
+			}
+			StackAfterALL.pop();
+			continue;
+		}
+		outputLine.push_back(str[i]);
+	}
+	
+	while(StackAfterALL.empty() != 1)
+	{
+		outputLine.push_back(StackAfterALL.top());
+		StackAfterALL.pop();
+	}
+	cout << "Polish notation: " << outputLine << endl;
+	return outputLine;
+}
+
+
 int main()
 {
 	string a = "(1+2+)*(2/0)";
 	check(a);
 	cout << a << endl;
-	
 
+	return 0;
 }
