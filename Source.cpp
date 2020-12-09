@@ -144,6 +144,12 @@ string polskayaZapis(string str)
 				StackAfterALL.pop();
 			}
 			StackAfterALL.pop();
+
+			while (StackAfterALL.empty() != 1)
+			{
+				outputLine.push_back(StackAfterALL.top());
+				StackAfterALL.pop();
+			}
 			continue;
 		}
 		outputLine.push_back(str[i]);
@@ -222,7 +228,7 @@ int together(string str)
 	}
 	else 
 	{
-		cout << "Error" << endl;
+		cout << "Expression entered incorrectly, write it correctly next time" << endl;
 		return 0;
 	}
 }
