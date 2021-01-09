@@ -237,8 +237,26 @@ int together(string str)
 
 int main()
 {
-	string a = "(1+2+)*(2/0)";
-	together(a);
+	string Error1 = "2++1";
+	together(Error1);
+	cout << "--------------------------------" << endl;
+	string Error2 = "2--1";
+	together(Error2);
+	cout << "--------------------------------" << endl;
+	string Error3 = "2**1";
+	together(Error3);
+	cout << "--------------------------------" << endl;
+	string Error4 = "2//1";
+	together(Error4);
+	cout << "--------------------------------" << endl;
+	string Error5 = "(1+2+)*(2/0)";
+	together(Error5);
+	cout << "--------------------------------" << endl;
+	string Error6 = "5+8)";
+	together(Error6);
+	cout << "--------------------------------" << endl;
+	string Error7 = "((5+8)";
+	together(Error7);
 	cout << "--------------------------------" << endl;
 	string b = "(5-7)*(4+4-9)*3";
 	together(b);
