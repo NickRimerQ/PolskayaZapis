@@ -1,0 +1,10 @@
+﻿  Source.cpp
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(8,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(38,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(52,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(66,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(80,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(111,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Наталия\source\repos\Polsk_zapis\Source.cpp(171,20): warning C4018: '<': signed/unsigned mismatch
+  Polsk_zapis.vcxproj -> C:\Users\Наталия\source\repos\Polsk_zapis\Debug\Polsk_zapis.exe
